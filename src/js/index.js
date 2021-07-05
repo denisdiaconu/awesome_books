@@ -6,5 +6,9 @@ const storage_list = document.getElementById("storage_list");
 btn.onclick = function() {
     const key = title.value;
     const value = author.value;
-    
-}
+
+    if (key && value) {
+        localStorage.setItem(key, value);
+        location.reload();
+    }
+};
