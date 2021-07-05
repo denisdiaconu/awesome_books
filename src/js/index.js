@@ -10,5 +10,13 @@ btn.onclick = function() {
     if (key && value) {
         localStorage.setItem(key, value);
         location.reload();
-    }
+    };
 };
+
+for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    const value = localStorage.getItem(key);
+
+    storage_list.append(key, value);
+};
+
