@@ -2,28 +2,40 @@ const title = document.getElementById("title");
 const author = document.getElementById("author");
 const btn = document.getElementById("btn");
 const storage_list = document.getElementById("storage_list");
-
-btn.onclick = function() {
-    const key = title.value;
-    const value = author.value;
-
-    if (key && value) {
-        localStorage.setItem(key, value);
-        location.reload();
-    };
+if(!localStorage.getItem('count')) {
+    localStorage.setItem('count', 0);
 };
-
-for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
-    const value = localStorage.getItem(key);
-
-    storage_list.innerHTML += key + ": " + value + "<button class='btn_remove'>Remove</button>" + "<br>";
+if (!localStorage.getItem('books')) {
+    localStorage.setItem('books', JSON.stringify([]));
 };
-
-
-const btn_remove = document.getElementById("btn_remove");
-
-btn_remove.onclick = function() {
-    localStorage.removeItem(key);
+btn.onclick = () => {
+    const books = JSON.parse(localStorage.getItem("books"))
+    let counter = JSON.parse(localStorage.getItem("count"))
+    book = {
+        id: counter += 1,
+        title: title.value,
+        author: author.value
+    }
+    books.push(book);
+    localStorage.setItem('count', counter);
+    localStorage.setItem('books', JSON.stringify(books));
     location.reload();
 };
+const remove = (id) => {
+    const books = JSON.parse(localStorage.getItem("books"));
+    const newBooks = books.filter((e) => e.id.toString() !== id.toString());
+    localStorage.setItem('books', JSON.stringify(newBooks));
+    location.reload();
+};
+const list = JSON.parse(localStorage.getItem('books'));
+const listLin = list.length;
+for (let i = 0; i < listLin; i += 1) {
+    const li = document.createElement("li")
+    li.innerHTML =`
+    <div id='${list[i].id}'>
+    <h1>${list[i].title}</h1>
+    <p>${list[i].author}</p>
+    <button onclick="remove(${list[i].id})">Remove</button>
+    </div>`;
+    storage_list.appendChild(li);
+}
