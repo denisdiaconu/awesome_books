@@ -17,6 +17,13 @@ for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
     const value = localStorage.getItem(key);
 
-    storage_list.append(key, value);
+    storage_list.innerHTML += key + ": " + value + "<button class='btn_remove'>Remove</button>" + "<br>";
 };
 
+
+const btn_remove = document.getElementById("btn_remove");
+
+btn_remove.onclick = function() {
+    localStorage.removeItem(key);
+    location.reload();
+};
