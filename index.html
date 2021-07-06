@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="src/css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Awesome Books</title>
-</head>
-<body>
-    <h1>hello my friend</h1>
-    <script src="/src/js/index.js"></script>
-</body>
+  </head>
+  <body>
+    <section id="list">
+      <h1>List</h1>
+      <ul id="storage_list"></ul>
+    </section>
+    <section id="add_book">
+      <input type="text" id="title" placeholder="title" required/>
+      <input type="text" id="author" placeholder="author" required/>
+      <button type="button" id="btn">Add</button>
+    </section>
+    <section id="info"></section>
+    <script src="./src/js/index.js"></script>
+  </body>
 </html>
