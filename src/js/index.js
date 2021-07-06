@@ -21,14 +21,14 @@ btn.onclick = () => {
   localStorage.setItem('books', JSON.stringify(books));
   window.location.reload();
 };
-/* eslint-disable */ 
+
 const remove = (id) => {
   const books = JSON.parse(localStorage.getItem('books'));
   const newBooks = books.filter((e) => e.id.toString() !== id.toString());
   localStorage.setItem('books', JSON.stringify(newBooks));
   window.location.reload();
 };
-/* eslint-enable */
+
 const list = JSON.parse(localStorage.getItem('books'));
 const listLin = list.length;
 for (let i = 0; i < listLin; i += 1) {
@@ -37,7 +37,16 @@ for (let i = 0; i < listLin; i += 1) {
     <div id='${list[i].id}'>
     <h1>${list[i].title}</h1>
     <p>${list[i].author}</p>
-    <button onclick="remove(${list[i].id})">Remove</button>
+    <button class="btn" id="${list[i].id}")">Remove</button>
     </div>`;
   storageList.appendChild(li);
+}
+const buttons = document.querySelectorAll('.btn');
+if (buttons) {
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      remove(e.target.id);
+    });
+  });
 }
