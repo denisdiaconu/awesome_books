@@ -74,6 +74,7 @@ class Ls {
     li.innerHTML = `
           <div id='${obj.id}'>
           <div class="title_container"><h1>${obj.title}</h1>
+          <p>:</p>
           <p>by ${obj.author}</p></div>
           <div class="btn_container"><button class="btn" id="${obj.id}">Remove</button></div>
           </div>`;
