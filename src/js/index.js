@@ -73,9 +73,9 @@ class Ls {
     const li = document.createElement('li');
     li.innerHTML = `
           <div id='${obj.id}'>
-          <h1>${obj.title}</h1>
-          <p>${obj.author}</p>
-          <button class="btn" id="${obj.id}">Remove</button>
+          <div class="title_container"><h1>${obj.title}</h1>
+          <p>by ${obj.author}</p></div>
+          <div class="btn_container"><button class="btn" id="${obj.id}">Remove</button></div>
           </div>`;
     this.storageList.appendChild(li);
     this.addEvent();
