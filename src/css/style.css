@@ -35,19 +35,23 @@ body {
 }
 
 #list {
-  margin-top: 30px
+  margin-top: 30px;
 }
 
-ul>li {
+li {
+  width: 100%;
+}
+
+ul > li {
   border-bottom: 1px solid rgb(221, 221, 221);
   padding: 0;
 }
 
-ul>li:nth-of-type(odd) {
+ul > li:nth-of-type(odd) {
   background-color: whitesmoke;
 }
 
-ul>li:last-child {
+ul > li:last-child {
   border-bottom: none;
 }
 
@@ -56,7 +60,7 @@ h1 {
   font-size: 30px;
 }
 
-li>div {
+li > div {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -67,27 +71,23 @@ li>div {
   align-items: center;
 }
 
-.title_container>h1 {
-  color: rgb(112, 112, 247);
-  font-size: 20px;
-  text-transform: capitalize;
-  margin-left: 20px;
-}
-
-.title_container>p {
-  color: rgb(112, 112, 247);
-  font-size: 20px;
-  text-transform: capitalize;
-  margin-left: 20px;
-}
-
-li>div>h1 {
+li > div > h1 {
   margin: 0;
   font-family: serif;
 }
 
-li {
-  width: 100%;
+.title_container > h1 {
+  color: rgb(112, 112, 247);
+  font-size: 20px;
+  text-transform: capitalize;
+  margin-left: 20px;
+}
+
+.title_container > p {
+  color: rgb(112, 112, 247);
+  font-size: 20px;
+  text-transform: capitalize;
+  margin-left: 20px;
 }
 
 #container_add {
@@ -107,14 +107,14 @@ li {
   margin: auto;
 }
 
-#add_book>input {
+#add_book > input {
   height: 35px;
   padding-left: 10px;
   color: rgb(112, 112, 247);
   border-radius: 3px;
 }
 
-#add_book>input:focus {
+#add_book > input:focus {
   border-bottom: 2px solid red;
   border-top: 2px solid red;
   border-left: 4px solid transparent;
@@ -122,11 +122,11 @@ li {
   transition: border-bottom 1s, border-top 1s;
 }
 
-#add_book>div {
+#add_book > div {
   text-align: right;
 }
 
-#add_book>div>button {
+#add_book > div > button {
   width: 80px;
   height: 35px;
   margin-top: 3px;
@@ -137,14 +137,14 @@ li {
   border-radius: 6px;
 }
 
-#add_book>div>button:hover {
+#add_book > div > button:hover {
   cursor: pointer;
   color: rgb(112, 112, 247);
   background-color: whitesmoke;
   transition: color 1s, background-color 1s;
 }
 
-#add_book>h3 {
+#add_book > h3 {
   font-weight: bold;
   font-size: 27px;
   font-family: serif;
