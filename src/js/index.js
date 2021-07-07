@@ -5,6 +5,26 @@ class Ls {
     this.author = author;
   }
 
+  getBookList() {
+    this.getbooks = localStorage.getItem('BookList');
+    return this.getbooks;
+  }
+
+  getCount() {
+    this.getcounter = localStorage.getItem('BookCount');
+    return this.getcounter;
+  }
+
+  updateBooklist(list) {
+    this.allBooks = localStorage.setItem('BookList', list);
+    return this.allBooks;
+  }
+
+  updateCount(count) {
+    this.setCounter = localStorage.setItem('BookCount', count);
+    return this.setCounter;
+  }
+
   setls() {
     this.count = 0;
     if (!localStorage.getItem('BookList')) {
@@ -13,66 +33,70 @@ class Ls {
     if (!localStorage.getItem('BookCount')) {
       localStorage.setItem('BookCount', this.count);
     }
+    this.displayAllBooks();
+  }
+
+  displayAllBooks() {
+    const list = JSON.parse(this.getBookList());
+    const len = list.length;
+    if (len > 0) {
+      list.forEach((book) => this.addtodom(book));
+    }
   }
 
   addBook(bookObj) {
     const list = JSON.parse(this.getBookList());
-    let count = this.getCount();
-    count += 1;
+    let newCount = Number(this.getCount());
     list.push(bookObj);
-    this.updateBooklist(list);
-    this.updateCount(count);
+    this.updateBooklist(JSON.stringify(list));
+    this.updateCount(newCount += 1);
+  }
+
+  removeBook(id) {
+    const books = JSON.parse(this.getBookList());
+    const newBooks = books.filter((e) => e.id.toString() !== id.toString());
+    this.updateBooklist(JSON.stringify(newBooks));
+  }
+
+  getBookInputs() {
+    this.counter = this.getCount();
+    const title = document.getElementById('title');
+    const author = document.getElementById('author');
+    const newBook = new Ls(this.counter, title.value, author.value);
+    title.value = '';
+    author.value = '';
+    return newBook;
+  }
+
+  addtodom(obj) {
+    this.storageList = document.getElementById('storage_list');
+    const li = document.createElement('li');
+    li.innerHTML = `
+          <div id='${obj.id}'>
+          <h1>${obj.title}</h1>
+          <p>${obj.author}</p>
+          <button class="btn" id="${obj.id}">Remove</button>
+          </div>`;
+    this.storageList.appendChild(li);
+    this.addEvent();
+  }
+
+  addEvent() {
+    this.buttons = document.querySelectorAll('.btn');
+    this.buttons.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.removeBook(e.target.id);
+        e.target.parentElement.parentElement.remove();
+      });
+    });
   }
 }
 const database = new Ls();
 database.setls();
-const getBookList = () => localStorage.getItem('BookList');
-const getCount = () => localStorage.getItem('BookCount');
-const updateBooklist = (list) => localStorage.setItem('BookList', list);
-const updateCount = (count) => localStorage.setItem('BookCount', count);
-let counter = getCount();
-const dom = () => {
-  const title = document.getElementById('title');
-  const author = document.getElementById('author');
-  const newBook = new Ls(counter, title.value, author.value);
-  title.value = '';
-  author.value = '';
-  return newBook;
-};
 const btn = document.getElementById('btn');
-const storageList = document.getElementById('storage_list');
-const removebook = (id) => {
-  const books = JSON.parse(getBookList());
-  const newBooks = books.filter((e) => e.id.toString() !== id.toString());
-  updateBooklist(JSON.stringify(newBooks));
-};
-const addEvent = () => {
-  const buttons = document.querySelectorAll('.btn');
-  buttons.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      removebook(e.target.id);
-      e.target.parentElement.parentElement.remove();
-    });
-  });
-};
-const addtodom = (obj) => {
-  const li = document.createElement('li');
-  li.innerHTML = `
-      <div id='${obj.id}'>
-      <h1>${obj.title}</h1>
-      <p>${obj.author}</p>
-      <button class="btn" id="${obj.id}">Remove</button>
-      </div>`;
-  storageList.appendChild(li);
-  addEvent();
-};
 btn.onclick = () => {
-  const newBook = dom();
-  const allbooks = JSON.parse(getBookList());
-  allbooks.push(newBook);
-  counter = Number(counter);
-  updateCount(counter += 1);
-  updateBooklist(JSON.stringify(allbooks));
-  addtodom(newBook);
+  const newBook = database.getBookInputs();
+  database.addBook(newBook);
+  database.addtodom(newBook);
 };
