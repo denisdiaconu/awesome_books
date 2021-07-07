@@ -115,7 +115,7 @@ li > div > h1 {
 }
 
 #add_book > input:focus {
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid rgb(0, 255, 55);
   border-top: 2px solid red;
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
