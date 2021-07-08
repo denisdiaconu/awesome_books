@@ -101,3 +101,8 @@ btn.onclick = () => {
   database.addBook(newBook);
   database.addtodom(newBook);
 };
+
+
+const listLink = document.getElementById('list_link');
+const addNewLink = document.getElementById('add_newlink');
+const contactLink = document.getElementById('contact_link');
