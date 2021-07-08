@@ -24,6 +24,7 @@ a {
   text-transform: capitalize;
 }
 
+
 #add_newlink {
   color: rgb(112, 112, 247);
   font-weight: bold;
@@ -176,4 +177,22 @@ li > div > h1 {
   font-size: 27px;
   font-family: serif;
   color: rgb(112, 112, 247);
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#topic {
+  display: flex;
+}
+
+#topic_links {
+  display: flex;
+  justify-content: right;
+}
+
+#date {
+  text-align: right;
 }
