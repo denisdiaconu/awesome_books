@@ -182,17 +182,36 @@ li > div > h1 {
 nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  width: 100%;
+  height: 50px;
+  background-color:transparent;
+  border-bottom: 2px solid  rgb(112, 112, 247);;
 }
 
 #topic {
   display: flex;
+  align-items: center;
 }
+
+#topic > h2 {
+  margin-left: 25px;
+  color:  rgb(112, 112, 247);
+}
+
+#topic_links > a {
+  margin-right: 25px;
+} 
 
 #topic_links {
   display: flex;
   justify-content: right;
+  align-items: center;
 }
 
 #date {
   text-align: right;
+  color:  rgb(112, 112, 247);
+  margin-top: 20px;
+  margin-right: 20px;
 }
+
