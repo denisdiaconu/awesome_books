@@ -128,4 +128,5 @@ contactLink.onclick = function() {
   addContainer.style.display='none'
   infoContainer.style.display='inline'
 }
-
+var DateTime = luxon.DateTime; 
+console.log(DateTime);
