@@ -14,6 +14,28 @@
   border-radius: 5px;
 }
 
+a {
+  text-decoration: none;
+}
+
+#list_link {
+  color: red;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+#add_newlink {
+  color: rgb(112, 112, 247);
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+#contact_link {
+  font-weight: bold;
+  color: rgb(112, 112, 247);
+  text-transform: capitalize;
+}
+
 .btn:hover {
   cursor: pointer;
   color: rgb(112, 112, 247);

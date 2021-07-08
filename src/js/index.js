@@ -115,18 +115,27 @@ listLink.onclick = function() {
   listContainer.style.display='inline'
   addContainer.style.display='none'
   infoContainer.style.display='none'
+  listLink.style.color='red'
+  addNewLink.style.color='rgb(112, 112, 247)'
+  contactLink.style.color='rgb(112, 112, 247)'
 }
 
 addNewLink.onclick = function() {
   listContainer.style.display='none'
   addContainer.style.display='inline'
   infoContainer.style.display='none'
+  listLink.style.color='rgb(112, 112, 247)'
+  addNewLink.style.color='red'
+  contactLink.style.color='rgb(112, 112, 247)'
 }
 
 contactLink.onclick = function() {
   listContainer.style.display='none'
   addContainer.style.display='none'
   infoContainer.style.display='inline'
+  listLink.style.color='rgb(112, 112, 247)'
+  addNewLink.style.color='rgb(112, 112, 247)'
+  contactLink.style.color='red'
 }
 var DateTime = luxon.DateTime;
 const dateContainer = document.getElementById('date');
