@@ -109,7 +109,7 @@ const listContainer = document.getElementById('list');
 const addContainer = document.getElementById('container_add');
 const infoContainer = document.getElementById('info');
 
-listLink.onclick = function () {
+listLink.onclick = () => {
   listContainer.style.display = 'inline';
   addContainer.style.display = 'none';
   infoContainer.style.display = 'none';
@@ -118,7 +118,7 @@ listLink.onclick = function () {
   contactLink.style.color = 'rgb(112, 112, 247)';
 };
 
-addNewLink.onclick = function () {
+addNewLink.onclick = () => {
   listContainer.style.display = 'none';
   addContainer.style.display = 'inline';
   infoContainer.style.display = 'none';
@@ -127,7 +127,7 @@ addNewLink.onclick = function () {
   contactLink.style.color = 'rgb(112, 112, 247)';
 };
 
-contactLink.onclick = function () {
+contactLink.onclick = () => {
   listContainer.style.display = 'none';
   addContainer.style.display = 'none';
   infoContainer.style.display = 'inline';
@@ -135,7 +135,8 @@ contactLink.onclick = function () {
   addNewLink.style.color = 'rgb(112, 112, 247)';
   contactLink.style.color = 'red';
 };
-const { DateTime } = luxon;
+
 const dateContainer = document.getElementById('date');
-const now = DateTime.now().toString();
-dateContainer.append(now);
+const now = Date.now();
+const today = Date(now);
+dateContainer.append(today);
