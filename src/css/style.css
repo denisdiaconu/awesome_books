@@ -92,6 +92,11 @@ li > div > h1 {
 
 #container_add {
   margin-top: 40px;
+  display: none;
+}
+
+#info {
+  display: none;
 }
 
 .btn_container {

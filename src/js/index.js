@@ -106,3 +106,9 @@ btn.onclick = () => {
 const listLink = document.getElementById('list_link');
 const addNewLink = document.getElementById('add_newlink');
 const contactLink = document.getElementById('contact_link');
+
+listLink.onclick = function() {
+  listLink.style.display='inline'
+  addNewLink.style.display='none'
+  contactLink.style.display='inline'
+}
