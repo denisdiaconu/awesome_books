@@ -102,7 +102,6 @@ btn.onclick = () => {
   database.addtodom(newBook);
 };
 
-
 const listLink = document.getElementById('list_link');
 const addNewLink = document.getElementById('add_newlink');
 const contactLink = document.getElementById('contact_link');
@@ -110,34 +109,33 @@ const listContainer = document.getElementById('list');
 const addContainer = document.getElementById('container_add');
 const infoContainer = document.getElementById('info');
 
+listLink.onclick = function () {
+  listContainer.style.display = 'inline';
+  addContainer.style.display = 'none';
+  infoContainer.style.display = 'none';
+  listLink.style.color = 'red';
+  addNewLink.style.color = 'rgb(112, 112, 247)';
+  contactLink.style.color = 'rgb(112, 112, 247)';
+};
 
-listLink.onclick = function() {
-  listContainer.style.display='inline'
-  addContainer.style.display='none'
-  infoContainer.style.display='none'
-  listLink.style.color='red'
-  addNewLink.style.color='rgb(112, 112, 247)'
-  contactLink.style.color='rgb(112, 112, 247)'
-}
+addNewLink.onclick = function () {
+  listContainer.style.display = 'none';
+  addContainer.style.display = 'inline';
+  infoContainer.style.display = 'none';
+  listLink.style.color = 'rgb(112, 112, 247)';
+  addNewLink.style.color = 'red';
+  contactLink.style.color = 'rgb(112, 112, 247)';
+};
 
-addNewLink.onclick = function() {
-  listContainer.style.display='none'
-  addContainer.style.display='inline'
-  infoContainer.style.display='none'
-  listLink.style.color='rgb(112, 112, 247)'
-  addNewLink.style.color='red'
-  contactLink.style.color='rgb(112, 112, 247)'
-}
-
-contactLink.onclick = function() {
-  listContainer.style.display='none'
-  addContainer.style.display='none'
-  infoContainer.style.display='inline'
-  listLink.style.color='rgb(112, 112, 247)'
-  addNewLink.style.color='rgb(112, 112, 247)'
-  contactLink.style.color='red'
-}
-var DateTime = luxon.DateTime;
+contactLink.onclick = function () {
+  listContainer.style.display = 'none';
+  addContainer.style.display = 'none';
+  infoContainer.style.display = 'inline';
+  listLink.style.color = 'rgb(112, 112, 247)';
+  addNewLink.style.color = 'rgb(112, 112, 247)';
+  contactLink.style.color = 'red';
+};
+const { DateTime } = luxon;
 const dateContainer = document.getElementById('date');
 const now = DateTime.now().toString();
 dateContainer.append(now);

@@ -24,7 +24,6 @@ a {
   text-transform: capitalize;
 }
 
-
 #add_newlink {
   color: rgb(112, 112, 247);
   font-weight: bold;
@@ -183,9 +182,9 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
-  height: 50px;
-  background-color:transparent;
-  border-bottom: 2px solid  rgb(112, 112, 247);;
+  height: 60px;
+  background-color: transparent;
+  border-bottom: 2px solid  rgb(112, 112, 247);
 }
 
 #topic {
@@ -195,12 +194,24 @@ nav {
 
 #topic > h2 {
   margin-left: 25px;
-  color:  rgb(112, 112, 247);
+  color: rgb(112, 112, 247);
 }
 
 #topic_links > a {
   margin-right: 25px;
-} 
+  border-bottom: 3px solid white;
+  border-left: 3px solid white;
+  border-radius: 30px;
+  width: 90px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+#topic_links > a:hover {
+  border-bottom: 3px solid rgb(112, 112, 247);
+  border-left: 3px solid rgb(112, 112, 247);
+  transition: border-bottom 1s, border-left 1s;
+}
 
 #topic_links {
   display: flex;
@@ -210,8 +221,35 @@ nav {
 
 #date {
   text-align: right;
-  color:  rgb(112, 112, 247);
+  color: rgb(112, 112, 247);
   margin-top: 20px;
   margin-right: 20px;
 }
 
+#info > div {
+  width: 50%;
+  min-width: 430px;
+  margin: auto;
+  margin-top: 50px;
+  color: rgb(112, 112, 247);
+}
+
+#info > div > h2 {
+  margin-bottom: 20px;
+}
+
+#info > div > ul {
+  border: 2px solid rgb(112, 112, 247);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  margin-top: 20px;
+}
+
+#info > div > ul > li {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  color: rgb(112, 112, 247);
+}
