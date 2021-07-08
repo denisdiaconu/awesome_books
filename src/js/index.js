@@ -106,9 +106,26 @@ btn.onclick = () => {
 const listLink = document.getElementById('list_link');
 const addNewLink = document.getElementById('add_newlink');
 const contactLink = document.getElementById('contact_link');
+const listContainer = document.getElementById('list');
+const addContainer = document.getElementById('container_add');
+const infoContainer = document.getElementById('info');
+
 
 listLink.onclick = function() {
-  listLink.style.display='inline'
-  addNewLink.style.display='none'
-  contactLink.style.display='inline'
+  listContainer.style.display='inline'
+  addContainer.style.display='none'
+  infoContainer.style.display='none'
 }
+
+addNewLink.onclick = function() {
+  listContainer.style.display='none'
+  addContainer.style.display='inline'
+  infoContainer.style.display='none'
+}
+
+contactLink.onclick = function() {
+  listContainer.style.display='none'
+  addContainer.style.display='none'
+  infoContainer.style.display='inline'
+}
+
