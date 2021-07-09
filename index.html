@@ -6,18 +6,47 @@
     <link rel="stylesheet" href="src/css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Awesome Books</title>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0/build/global/luxon.min.js"></script>
   </head>
   <body>
+    <nav>
+      <div id="topic">
+        <h2>Awesome Books</h2>
+      </div>
+      <div id="topic_links">
+        <a href="#" id="list_link">List</a>
+        <a href="#" id="add_newlink">Add New</a>
+        <a href="#" id="contact_link">Contact</a>
+      </div>
+    </nav>
+    <div id="date"></div>
     <section id="list">
-      <h1>List</h1>
+      <h1>All Awesome Books</h1>
       <ul id="storage_list"></ul>
     </section>
-    <section id="add_book">
-      <input type="text" id="title" placeholder="title" required/>
-      <input type="text" id="author" placeholder="author" required/>
-      <button type="button" id="btn">Add</button>
+    <section id="container_add">
+      <div id="add_book">
+        <h3>Add a new book</h3>
+        <input type="text" id="title" placeholder="Title"  required/>
+        <input type="text" id="author" placeholder="Author" required/>
+        <div>
+          <button type="button" id="btn">Add</button>
+        </div>
+      </div>
     </section>
-    <section id="info"></section>
+    <section id="info">
+      <div>
+        <h2>Contact Information</h2>
+        <p>Do you have any questions or you just wanted to say "hello"?</p>
+        <p>You can reach out to us</p>
+        <ul>
+          <li>Our email: email@mic.com</li>
+          <li>Our phone number: 2256846722</li>
+          <li>Our address: Miami 2003</li>
+        </ul>
+      </div>
+    </section>
+    
     <script src="./src/js/index.js"></script>
   </body>
 </html>
